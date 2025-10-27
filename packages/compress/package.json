@@ -1,0 +1,39 @@
+{
+  "name": "@smol-range/compress",
+  "version": "0.1.0",
+  "description": "Library for compressing a list of integer ranges.",
+  "keywords": [
+    "compression",
+    "range",
+    "unicode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valadaptive/smol-range.git",
+    "directory": "packages/compress"
+  },
+  "homepage": "https://github.com/valadaptive/smol-range#readme",
+  "bugs": {
+    "url": "https://github.com/valadaptive/smol-range/issues"
+  },
+  "author": "valadaptive",
+  "type": "module",
+  "license": "(MIT OR ISC OR Apache-2.0)",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "tsc -b --clean",
+    "prepublishOnly": "npm run build"
+  }
+}
