@@ -12,7 +12,7 @@ This library uses a hybrid between gap encoding and run-length encoding that I h
 
 The hybrid encoding used by this library (which I tentatively call "flip coding") is like gap encoding, but with a twist: after two successive present integers, we switch to encoding the gaps between *absences*. After two successive absences, we then switch back to encoding gaps between presences, and so on. This provides the performance of gap encoding on sparse data and run-length encoding on dense data, while also treating zeroes and ones completely symmetrically.
 
-The binary representation encodes each gap using [Elias gamma coding](https://en.wikipedia.org/wiki/Elias_gamma_coding): a number *n* is encoded as a run of `log2(n)` zero bits, followed by the number itself, which is `log2(n) + 1` bits long. I've tested other encodings, but gamma coding is the simplest and also the best-performing in terms of output size.. Others (like [Elias delta coding](https://en.wikipedia.org/wiki/Elias_delta_coding)) encode large integers better at the expense of small ones, but this only benefits very sparse datasets that would be small anyway.
+The binary representation encodes each gap using [Elias gamma coding](https://en.wikipedia.org/wiki/Elias_gamma_coding): a number *n* is encoded as a run of `log2(n)` zero bits, followed by the number itself, which is `log2(n) + 1` bits long. I've tested other encodings, but gamma coding is the simplest and also the best-performing in terms of output size. Others (like [Elias delta coding](https://en.wikipedia.org/wiki/Elias_delta_coding)) encode large integers better at the expense of small ones, but this only benefits very sparse datasets that would be small anyway.
 
 ## The packages
 
